@@ -13,7 +13,7 @@ int main()
 	AddNewBlock(20, 20, 100, 400);
 
 	m_setup();
-	while (true)
+	while (true) // does the program ever exit?
 	{
 		al_clear_to_color({ 0,0,0,0 });
 		systems.RunSystems(0);

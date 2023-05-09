@@ -16,5 +16,5 @@
 #include "VelocityComponent.hpp"
 #include <queue>
 
-#define root (*SceneTree::SceneRoot.get())
+#define root (*SceneTree::SceneRoot.get()) // this needs to change - don't use macros
 #define deref(arg) (*arg.get())

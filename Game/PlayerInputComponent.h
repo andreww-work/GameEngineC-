@@ -4,9 +4,22 @@ class PlayerInputComponent :
     public IComponent
 {
 public:
-    std::string GetGame() {
-        return name;
+    inline std::string GetGame() {
+        return "PlayerInputComponent";
     }
-    inline static const char* name = "PlayerInputComponent";
+
+    inline int multiply(x, y) {
+        return x * y;
+    }
+
+    int square(x) {
+        return multiply(x, x);
+    }
+
+    // compiled sq
+    int compiled_squared(x) {
+        return GetGame();
+    }
+    //inline static const char* name = "PlayerInputComponent";
 };
 

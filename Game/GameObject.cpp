@@ -28,7 +28,9 @@ void GameObject::AddChild(GameObject* child ) {
 }
 void GameObject::RemoveChild(GameObject* child) 
 {
-	decltype(_Children)::iterator iter = _Children.begin();
+	decltype(_Children)::iterator iter = _Children.begin(); //use auto
+
+	//maybe find some ways to remove linear search
 	while (iter != _Children.end()) {
 		if ((*iter).get()== child) {
 			// if track is empty, remove it
@@ -51,7 +53,7 @@ void GameObject::RemoveComponent(std::string name) {
 void GameObject::AddComponent(IComponent* component) {
 	if (component != NULL) {
 		if (_Components.find(component->GetName()) !=  _Components.end()) {
-			throw std::invalid_argument("component already exists");
+			throw std::invalid_argument("component already exists"); //do you want the program to crash?
 		}
 		else {
 			_Components.insert({ component->GetName(), std::unique_ptr<IComponent>(component) });
